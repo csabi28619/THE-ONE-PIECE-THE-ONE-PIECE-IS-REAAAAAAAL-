@@ -1,0 +1,45 @@
+kábelek
+hostname-ek (SW1, SW2, R1)
+gig 0/0(192.16.0.1 255.255.255.0)   A priv 2 részr 2.cím 1 címe
+swithc-ek jelsz: cisco
+	  secret: class
+ssh:Swithch 1:
+	A priv 2 részr 2.cím 2 címe
+	domain: nokedliporkoltel.hu
+	kulcs:2048
+	csak ssh lehetséges
+	csak helyi felhasználók léphessenek be
+	verzió: 2
+	időtúllépés: 60 sec
+	újrapróbálkozási lehetőségek: 3
+
+switch 0-án:
+	192.168.0.2
+	exec-timeout: 10 sec
+	névfeloldó tiltása
+	log, parancsok elválasztása
+dhcp a router 0-án:
+	gig 0/0:
+		lan1
+		netw 192.16.0.1
+		192.16.0.1/24 atjár
+		dns 8.8.8.8
+		vegye kivételnek az első két címet
+	gig 0/1:
+		lan2
+		A priv 2 részr 2.cím 1 címe
+		dns 8.8.8.8
+		vegye ki az első három címet
+		
+kapcsolja fel a gépeken a dhcp álltali címadást
+
+wireless:
+	A priv 2 rész 2.cím 3.címe
+	dns 8.8.8.8
+	az első kiadható ip 192.168.0.10
+	a router ip-je 192.168.0.3 
+	az átjáró A priv 2 rész 2.cím 3.címe
+	a max emberek száma 15
+	az eszköz SSID-je SOHO router legyen
+	biztonsági fülben wpa2 personal
+	passphrase:SOHO
