@@ -18,11 +18,13 @@ switch 0-án:
 	exec-timeout: 10 sec
 	névfeloldó tiltása
 	log, parancsok elválasztása
+	telnet: password cisco
+
 dhcp a router 0-án:
 	gig 0/0:
 		lan1
-		netw 192.16.0.1
-		192.16.0.1/24 atjár
+		netw 192.168.0.1
+		192.168.0.1/24 atjár
 		dns 8.8.8.8
 		vegye kivételnek az első két címet
 	gig 0/1:
